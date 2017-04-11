@@ -1,0 +1,48 @@
+<?php include "header.html" ?>
+<?php include "nav.html" ?>
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">专辑</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>名称</th>
+          <th>歌手</th>
+          <th>封面</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($album as $k=>$v):?>
+        <tr>
+          <td><?php echo $k+1;?></td>
+          <td><?php echo $v['name']?></td>
+          <td><?php echo $v['artist_name']?></td>
+          <td><img src="<?php echo $v['pic']?>" width="30" height="30"/></td>
+          <td>
+            <span>
+            <a href="/admin/update_album?album_id=<?php echo $v['id']?>">修改</a>
+            |
+            <a href="/admin/delete_album?album_id=<?php echo $v['id']?>">删除</a>
+            |
+            <a href="/admin/music?album_id=<?php echo $v['id']?>">查看歌曲</a>
+            </span>
+          </td>
+        </tr>
+        <?php endforeach;?>
+        </tbody>
+      </table>
+      <div style="text-align:center">
+        <?php echo $page?>
+        <a href="/admin/add_album" class="btn btn-success">
+          新增专辑
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<?php include "footer.html" ?>

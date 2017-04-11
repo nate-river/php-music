@@ -1,0 +1,22 @@
+<?php include "header.html" ?>
+<?php include "nav.html" ?>
+<div class="container">
+  <input type="hidden" id='url' value="<?php echo $url?>">
+  <div class="alert alert-danger" role="alert">
+    <?php echo $info?> <span id="time">3</span>秒之后跳转 <a href="<?php echo $url;?>">点这里跳转</a>
+  </div>
+</div>
+<script>
+  $(function () {
+    var i = 3;
+    var timerId = setInterval(function () {
+      i--;
+      $('#time').text(i);
+      if (i === 0) {
+        clearInterval(timerId);
+        location.href = $('#url').val();
+      }
+    }, 1000);
+  })
+</script>
+<?php include "footer.html" ?>

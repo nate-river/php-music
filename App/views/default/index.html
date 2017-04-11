@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <title>Audio</title>
+  <link rel="stylesheet" href="<?php echo CSS_PATH?>index.css">
+  <script src="<?php echo JS_PATH?>jquery.js"></script>
+  <script src="<?php echo JS_PATH?>album.js"></script>
+  <script src="<?php echo JS_PATH?>hammer.min.js"></script>
+</head>
+<body>
+<input type="hidden" id="num" value="<?php echo $num?>">
+<div class="header">
+  <div class="logo">music</div>
+</div>
+<div class="container">
+  <?php foreach($album as $k=>$v):?>
+  <div class="album" data-id="<?php echo $v['id']?>">
+    <div class="pic" style="background-image:url('<?php echo $v['pic'];?>')">
+    </div>
+    <div class="desc"><?php echo $v['name']?></div>
+    <div class="play"></div>
+  </div>
+  <?php endforeach;?>
+</div>
+
+<div class="button"></div>
+<div class="mini-player">
+
+</div>
+<!--<audio id="audio"></audio>-->
+
+<!--<div class="music">-->
+<!--<div class="prev iconfont icon-music_beginning_button"></div>-->
+<!--<div class="play-pause iconfont icon-music_play_button"></div>-->
+<!--<div class="next iconfont icon-music_end_button"></div>-->
+<!--<div class="time">-->
+<!--<span id="c-time">&#45;&#45;:&#45;&#45;</span>-->
+<!--<span>/</span>-->
+<!--<span id="d-time">&#45;&#45;:&#45;&#45;</span>-->
+<!--</div>-->
+<!--<div class="progress">-->
+<!--<div class="bar"></div>-->
+<!--<div class="blue">-->
+<!--<div class="point"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="volume-wrapper">-->
+<!--<div class="volume iconfont icon-music_volume_up"></div>-->
+<!--<div class="v-progress">-->
+<!--<div class="bar"></div>-->
+<!--<div class="blue">-->
+<!--<div class="point"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="info">-->
+<!--<p>歌手:<span class="artist"></span></p>-->
+<!--<p>歌曲:<span class="song"></span></p>-->
+<!--</div>-->
+
+<!--<ul id="play-list">-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<span>歌曲1</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="delete">x</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--</ul>-->
+
+</body>
+<!--<script src="<?php echo JS_PATH;?>jquery.js"></script>-->
+<!--<script src="<?php echo JS_PATH;?>index.js"></script>-->
+</html>

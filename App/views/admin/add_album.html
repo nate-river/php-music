@@ -1,0 +1,36 @@
+<?php include "header.html" ?>
+<?php include "nav.html" ?>
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">添加专辑</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/admin/_add" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">专辑名</label>
+          <input type="text" class="form-control" name="name" id="exampleInputEmail1" placeholder="专辑名">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">歌手名</label>
+          <input type="text" class="form-control" name="artist_name" id="exampleInputPassword1" placeholder="歌手名">
+        </div>
+
+        <div class="form-group">
+          <label for="f">点击上传封面</label>
+          <input type="file" id="f" class="form-control" name="file">
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label for="exampleInputFile">上传专辑封面</label>-->
+        <!--<input type="file" id="exampleInputFile">-->
+        <!--<p class="help-block">只支持大小小于xkb的jpg,png格式图片</p>-->
+        <!--</div>-->
+        <button type="submit" class="btn btn-default">提交</button>
+        <!--<input type="text" name="name">-->
+        <!--<input type="text" name="artist_name">-->
+        <!--<input type="submit" value="提交">-->
+      </form>
+    </div>
+  </div>
+</div>
+<?php include "footer.html" ?>

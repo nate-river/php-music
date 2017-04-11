@@ -1,0 +1,46 @@
+@mixin lr() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin tb() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin center() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin cube($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin rect($w,$h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin circle($size) {
+  @include cube($size);
+  border-radius: 50%;
+}
+
+@mixin bg() {
+  $r: floor(random()*256);
+  $g: floor(random()*256);
+  $b: floor(random()*256);
+  $a: floor(random()*3 + 3)/10;
+  $color: rgba($r, $g, $b, $a);
+  background: $color;
+}
